@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import '../styles/AuthForm.css';
 
-const AuthForm = ({ mode, setCurrentPage }) => {
+const AuthForm = ({ setCurrentPage }) => {
+  const [mode, setMode] = useState("login");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -15,8 +16,17 @@ const AuthForm = ({ mode, setCurrentPage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Assuming login is always successful
-    setCurrentPage("home"); // Switch to home page after login
+    // Assuming login/signup is always successful
+    setCurrentPage("home"); // Switch to home page after login/signup
+  };
+
+  const toggleMode = () => {
+    setMode((prevMode) => (prevMode === "login" ? "signup" : "login"));
+    setFormData({
+      email: "",
+      password: "",
+      confirmPassword: mode === "signup" ? "" : undefined,
+    });
   };
 
   return (
@@ -63,14 +73,14 @@ const AuthForm = ({ mode, setCurrentPage }) => {
           {mode === "login" ? (
             <>
               Don't have an account?{" "}
-              <a href="#">
+              <a href="#" onClick={toggleMode}>
                 Sign up
               </a>
             </>
           ) : (
             <>
               Already have an account?{" "}
-              <a href="#">
+              <a href="#" onClick={toggleMode}>
                 Login
               </a>
             </>
