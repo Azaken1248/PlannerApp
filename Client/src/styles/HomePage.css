@@ -81,7 +81,6 @@
     margin: 0 auto;
   }
 
-  /* Container for the feedback section */
 .feedback-container {
     margin-top: 20px;
     padding: 20px;
@@ -91,7 +90,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Heading for the feedback section */
   .feedback-container h2 {
     font-size: 2rem;
     color: #39394a;
@@ -104,7 +102,7 @@
     margin-bottom: 30px;
   }
   
-  /* Styling for the feedback textarea */
+
   .feedback-input {
     width: 100%;
     height: 100px;
@@ -114,11 +112,10 @@
     color: #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    resize: vertical; /* Allows vertical resizing */
-    box-sizing: border-box; /* Includes padding in width/height */
+    resize: vertical; 
+    box-sizing: border-box; 
   }
-  
-  /* Styling for the feedback submit button */
+
   .feedback-button {
     padding: 10px 20px;
     margin: 10px;
@@ -130,12 +127,10 @@
     cursor: pointer;
   }
   
-  /* Hover state for the feedback submit button */
   .feedback-button:hover {
     background-color: #ff6a5b;
   }
-  
-  /* Focus state for the feedback textarea */
+
   .feedback-input:focus {
     background-color: #ff6a5b;
     outline: none;
@@ -145,6 +140,8 @@
   }
   .places-list{
     color: #ddd;
+    overflow-y: scroll;
+    max-height: 100px;
   }
   
   
